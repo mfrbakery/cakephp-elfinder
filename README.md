@@ -34,6 +34,7 @@ controller:
 	$this->Session->write('Elfinder.options', $elfinder_options);
 
 view:
+
 	<?php echo $this->Html->scriptStart();?>
 	$().ready(function() {
 	  var elf = $('#elfinder').elfinder({
@@ -43,7 +44,7 @@ view:
 	  }).elfinder('instance');
 	});
 	<?php echo $this->Html->scriptEnd();?>
-	
+
 	<?php echo $this->Html->css('//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css', '', array('inline' => false));?>
 	
 	<?php echo $this->Html->script('//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js', array('inline' => false));?>
