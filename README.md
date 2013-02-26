@@ -24,13 +24,18 @@ This package contains elfinder-2.0rc1.
 controller:
 
 	$option_path = 'PATH' .DS. 'TO' .DS. 'YOURS';
-	$this->Util->createDir($option_path);
+
+	$f = new Folder();
+
+	$f->create($option_path);
+
 	$elfinder_options = array(
 		'roots' => array(array(
 			'path' => $option_path,
 			'alias' => '提供ファイル:',
 		))
 	);
+
 	$this->Session->write('Elfinder.options', $elfinder_options);
 
 view:
@@ -48,12 +53,15 @@ view:
 	<?php echo $this->Html->css('//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css', '', array('inline' => false));?>
 	
 	<?php echo $this->Html->script('//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js', array('inline' => false));?>
+
 	<?php echo $this->Html->script('//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js', array('inline' => false));?>
 	
 	<?php echo $this->Html->css('/elfinder/css/elfinder.min', '', array('inline' => false));?>
+
 	<?php echo $this->Html->css('/elfinder/css/theme', '', array('inline' => false));?>
 	
 	<?php echo $this->Html->script('/elfinder/js/elfinder.min', array('inline' => false));?>
+
 	<?php echo $this->Html->script('/elfinder/js/i18n/elfinder.jp', array('inline' => false));?>
 
 
